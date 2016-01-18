@@ -1,0 +1,44 @@
+---------------   linux command line tips  -------------------
+
+pwd     -- Print Working Directory:  Shows the name of the current directory
+ls	-- shows the objects in a directory
+  -alhtr  -- options to show hidden files, sort them, use 
+	  -- what the hell are . and ..?
+
+cd	-- Change Directory
+mkdir	-- Make Directory
+rmdir	-- Remove Directory
+
+echo	-- displays the contents of the argument
+cat	-- displays the contents of a file
+
+> filename  	-- take whatever is produced to the left and write to a file
+>> filename	-- same but do not overwrite the file (keep appending)
+
+cp	-- copy a file
+rm	-- remove a file
+
+-- git
+  -- Lets config the git env:
+
+	git config --global user.name "j4anderson"
+	git config --global user.email "j4.anderson@gmail.com"
+	git config --global --list
+	
+	--set up new ssh key  (https://help.github.com/articles/generating-ssh-keys/)
+	
+	ssh-keygen -t rsa -b 4096 -C "j4.anderson@gmail.com"
+	  --passphrase hint (Christmas trip)
+	
+	-- epiphany browser doesn't seem to work with the Add SSH key on github so
+	-- use curl with the github api to add it:
+
+	curl -u "<github username" \
+	    --data "{\"title\":\"RPi`date +%Y%m%d%H%M%S`\",\"key\":\"`cat ~/.ssh/id_rsa.pub`\"}" \
+	    https://api.github.com/user/keys
+	 -- go out to the website and see the new credential :)
+
+  -- Now clone a repo:
+	git clone https://github.com/j4anderson/gitplayground
+
+
