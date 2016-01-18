@@ -1,0 +1,50 @@
+/****     Python tips:    ********/
+
+-- exit
+Cntl-D   or
+quit()
+
+-- Interative mode:
+
+>>> the_world_is_flat = 1
+>>> if the_world_is_flat:
+	print("Be careful not to fall off!")
+
+	
+Be careful not to fall off!
+
+-- As a script:
+
+chmod +x myscript.py
+#! /usr/bin/env python3.2    or
+#!/usr/bin/python3.2
+
+also set your PATH variable to include the dir the script is in:
+export PATH=$PATH:`pwd`
+
+-- Can customize every interpreted session by creating a file 
+-- (usercustomize.py or sitecustomize.py) with custom code and 
+-- putting it in the dir returned by:
+
+>>> import site
+>>> site.getusersitepackages()
+'/home/pi/.local/lib/python3.2/site-packages'
+
+-- Fibonacci generator:
+
+>>> a, b =0,1
+>>> while b<10:
+	print(b)
+	a,b=b, a+b
+
+
+-- Get help:
+help(print)   --> shows help for the print command
+
+-- convert an integer into string for a print call
+-- using the str() built-in function
+b=4
+print("list a has "+ str(b) +" slices.")
+
+
+
