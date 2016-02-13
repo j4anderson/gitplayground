@@ -44,7 +44,7 @@ rm	-- remove a file
   -- add folders and file then add them to git
 	git status
 	git add <new folder name>
-	git commit -m "comment on the commit"
+	git commit -am "comment on the commit"
 	git remote -v
 	git push <remote name> <branch name>
 
