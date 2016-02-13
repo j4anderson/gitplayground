@@ -22,18 +22,18 @@ rm	-- remove a file
   -- Lets config the git env:
 
 	git config --global user.name "j4anderson"
-	git config --global user.email “<email address>”
+	git config --global user.email "j4.anderson@gmail.com"
 	git config --global --list
 	
 	--set up new ssh key  (https://help.github.com/articles/generating-ssh-keys/)
 	
-	ssh-keygen -t rsa -b 4096 -C "<email address>"
+	ssh-keygen -t rsa -b 4096 -C "j4.anderson@gmail.com"
 	  --passphrase hint (Christmas trip)
 	
 	-- epiphany browser doesn't seem to work with the Add SSH key on github so
 	-- use curl with the github api to add it:
 
-	curl -u "<github username" \
+	curl -u "j4anderson" \
 	    --data "{\"title\":\"RPi`date +%Y%m%d%H%M%S`\",\"key\":\"`cat ~/.ssh/id_rsa.pub`\"}" \
 	    https://api.github.com/user/keys
 	 -- go out to the website and see the new credential :)
@@ -48,5 +48,15 @@ rm	-- remove a file
 	git remote -v
 	git push <remote name> <branch name>
 
+  -- now, before doing any work:
+	git fetch origin	-- get updates to the local master
 	git branch rpi_upd	-- create a branch for edits
-	git fetch origin	-- get updates to the local master 
+	git checkout rpi_upd	-- switch to that branch
+	-- do edits/add files, etc
+	git diff/add/commit etc until done
+	git checkout master
+	git merge rpi_upd	-- pushes changes to local master
+	git push		-- pushes local master changes to github
+	git branch -d rpi_upd	-- delete the branch once no longer needed
+
+

@@ -5,6 +5,7 @@ Cntl-D   or
 quit()
 
 -- Interative mode:
+python3.2
 
 >>> the_world_is_flat = 1
 >>> if the_world_is_flat:
