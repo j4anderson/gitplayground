@@ -18,6 +18,10 @@ cat	-- displays the contents of a file
 cp	-- copy a file
 rm	-- remove a file
 
+-- vi
+:set ts=4      -- sets tab size to 4 chars
+
+
 -- git
   -- Lets config the git env:
 
