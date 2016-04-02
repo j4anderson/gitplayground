@@ -17,5 +17,5 @@ bintime=bin(int(thetime2))
 print("The time in not quite binary " + bintime)
 
 # Nope, do it the right way, secs, mins, hours:
-theSecs=time.strftime("%S",thetime)
+theSecs=time.strftime("%S")
 print("Secs: " + theSecs)

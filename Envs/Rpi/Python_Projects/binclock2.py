@@ -104,7 +104,7 @@ while 1:
 			screen.blit(redball,pos_h22)
 		if theHrs0[1]=="1":
 			screen.blit(redball,pos_h23)
-		if theHrs0[0]=="1"
+		if theHrs0[0]=="1":
 			screen.blit(redball,pos_h24)
 	if theLen==3:
 		if theHrs0[2]=="1":
