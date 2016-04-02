@@ -9,7 +9,7 @@ import time
 
 # Get the system time:
 thetime=time.strftime("%H%M%S")
-bintime=bin(int(thetime2))
+bintime=bin(int(thetime))
 print("The time in not quite binary " + bintime)
 
 #Now try to display it in a graphical way
@@ -51,13 +51,16 @@ while 1:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT: sys.exit()
 
+	#Get the time
+	theTime=time.localtime()
+
 	screen.fill(gray)
 	#Hrs
 	screen.blit(blkball,pos_h11)
 	screen.blit(blkball,pos_h21)
-	screen.blit(redball,pos_h22)
-	screen.blit(redball,pos_h23)
-	screen.blit(redball,pos_h24)
+	screen.blit(blkball,pos_h22)
+	screen.blit(blkball,pos_h23)
+	screen.blit(blkball,pos_h24)
 	#Mins
 	screen.blit(blkball,pos_h31)
 	screen.blit(blkball,pos_h32)
@@ -74,6 +77,37 @@ while 1:
 	screen.blit(blkball,pos_h62)
 	screen.blit(blkball,pos_h63)
 	screen.blit(blkball,pos_h64)
+
+	#Turn some on
+	theSecs=int(time.strftime("%S",theTime))
+	if theSecs < 10:
+		theSecs=bin(theSecs)
+		theSecs=theSecs.lstrip('-0b')
+		theLen=len(theSecs)
+		if theLen==4:
+			if theSecs[3]=="1":
+				screen.blit(redball,pos_h61)
+			if theSecs[2]=="1":
+				screen.blit(redball,pos_h62)
+			if theSecs[1]=="1":
+				screen.blit(redball,pos_h63)
+			if theSecs[0]=="1":
+				screen.blit(redball,pos_h64)
+		if theLen==3:
+			if theSecs[2]=="1":
+				screen.blit(redball,pos_h61)
+			if theSecs[1]=="1":
+				screen.blit(redball,pos_h62)
+			if theSecs[0]=="1":
+				screen.blit(redball,pos_h63)
+		if theLen==2:
+			if theSecs[1]=="1":
+				screen.blit(redball,pos_h61)
+			if theSecs[0]=="1":
+				screen.blit(redball,pos_h62)
+		if theLen==1:
+			if theSecs[0]=="1":
+				screen.blit(redball,pos_h61)
 
 	pygame.display.flip()
 
