@@ -61,7 +61,7 @@ rm	-- remove a file
 	git diff/add/commit etc until done
 	git checkout master
 	git merge rpi_upd	-- pushes changes to local master
-	git push		-- pushes local master changes to github
+	git push		-- pushes local master changes to github (email address + Drew's boat)
 	git branch -d rpi_upd	-- delete the branch once no longer needed
 
 
