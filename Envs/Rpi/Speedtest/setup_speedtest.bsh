@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Setup env for Speed test
+
+# Setup tmp dir for output files
+dirnm="/tmp/speedtest"
+echo "dirname is $dirnm"
+
+if [ -d $dirnm ]
+  then echo "...already EXISTS!"
+else
+  mkdir $dirnm
+fi
+
+
+#  Write it to take a -d for deinstall then rm dirs/contents.
