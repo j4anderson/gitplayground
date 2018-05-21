@@ -1,0 +1,7 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+
+# The above are MacOS files used to track folder customizations in Finder
+# Not needed and don't want to see them when running status
