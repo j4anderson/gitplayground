@@ -30,9 +30,13 @@ rm	-- remove a file
 	git config --global --list
 	
 	--set up new ssh key  (https://help.github.com/articles/generating-ssh-keys/)
-	
+
+	ssh-keygen -t ed25519 -C "<emailaddress>
+		pp hint (Cat no CAPS)	
+
+	-- OLD stuff here:	
 	ssh-keygen -t rsa -b 4096 -C "<emailaddress>"
-	  --passphrase hint (Christmas trip)
+	  - if ed25519 isn't available
 	
 	-- epiphany browser doesn't seem to work with the Add SSH key on github so
 	-- use curl with the github api to add it:
