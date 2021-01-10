@@ -34,6 +34,25 @@ rm	-- remove a file
 	ssh-keygen -t ed25519 -C "<emailaddress>
 		pp hint (Cat no CAPS)	
 
+	  -- start ssh-agent
+	ps -ef | grep ssh-agent  (and if none, start it):
+	eval "$(ssh-agent -s)"
+
+ 	  -- then open or create config file:
+	vim ~/.ssh/config
+	
+	Host *
+	  AddKeysToAgent yes
+	  UseKeychain yes 		-- only if you used a passphrase
+	  IdentityFile ~/.shh/id_ed25519	
+
+	  -- Now add it:
+
+	ssh-add -K ~/.ssh/id_ed25519
+
+	  -- then add the contents of that file's .pub copy (public key) to github website (SSH key)
+
+
 	-- OLD stuff here:	
 	ssh-keygen -t rsa -b 4096 -C "<emailaddress>"
 	  - if ed25519 isn't available
