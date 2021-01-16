@@ -1,14 +1,16 @@
 #!/bin/bash
 # Create a .bash_profile in users home dir and set up colors, etc
 # Tested on Mac OS X 10.11.2  1/16/2016
+# Updated on Mac OS X 11.1    1/16/2021
 
 filenm="~/.bash_profile"
 echo "filenm is $filenm"
 
 if [ -e ~/.bash_profile ]
-  then echo ".bash_profile exists!"
+  then echo ".bash_profile exists so you better update it manually!"
 else
-  echo "export CLICOLOR=1" > ~/.bash_profile
+  echo "export PS1=\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ " > ~/.bash_profile
+  echo "export CLICOLOR=1" >> ~/.bash_profile
   echo "export LSCOLORS=ExFxBxDxCxegedabagacad" >> ~/.bash_profile
   echo "alias ls='ls -Gh'"  >> ~/.bash_profile 
 fi
